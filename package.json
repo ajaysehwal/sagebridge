@@ -1,0 +1,28 @@
+{
+  "name": "sagebridge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ajay Sehwal",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development",
+    "generate-pwa-assets": "pwa-asset-generator ./icon.png ./icons",
+    "build:pwa": "workbox generateSW workbox-config.js",
+    "serve:ssl": "./node_modules/.bin/http-server ./dist --ssl --key ./localhost-key.pem --cert ./localhost.pem -a localhost -p 8000 -o"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "workbox-cli": "^6.5.4",
+    "workbox-webpack-plugin": "^6.5.4"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "pwa-asset-generator": "^6.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
